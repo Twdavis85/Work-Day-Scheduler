@@ -2,12 +2,12 @@ $(document).ready(function () {
   $(".saveBtn").on("click", function () {
     var event = $(this).siblings(".event").val();
     var hour = $(this).parent().attr("id");
-console.log(event)
+    console.log(event);
     localStorage.setItem(hour, event);
   });
   $(".row").each(function () {
     var ourTime = parseInt($(this).attr("id").split("-")[1]);
-    var currentTime = moment().hours();
+    var currentTime = moment().hours()-12;
 
     console.group(ourTime, currentTime);
     if (ourTime < currentTime) {
@@ -35,12 +35,12 @@ console.log(event)
 
   $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
-  $(".newday").on("click", function() {
-      localStorage.clear()
-      location.reload()
-  })
-// const midnight = moment().hours()
-// if (midnight === 24) {
-//     localStorage.clear()
-// }
+  $(".newday").on("click", function () {
+    localStorage.clear();
+    location.reload();
+  });
+  // const midnight = moment().hours()
+  // if (midnight === 24) {
+  //     localStorage.clear()
+  // }
 });
