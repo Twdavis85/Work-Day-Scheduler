@@ -12,7 +12,7 @@ $(document).ready(function () {
   });
   $(".row").each(function () {
     var ourTime = parseInt($(this).attr("id").split("-")[1]);
-    var currentTime = moment().hours()-8;
+    var currentTime = moment().hours();
 
     if (ourTime < currentTime) {
       $(this).children(".event").addClass("past");
