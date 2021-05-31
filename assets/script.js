@@ -2,14 +2,18 @@ $(document).ready(function () {
   $(".saveBtn").on("click", function () {
     var event = $(this).siblings(".event").val();
     var hour = $(this).parent().attr("id");
-    console.log(event);
     localStorage.setItem(hour, event);
+    $("i").removeClass("fas fa-plus");
+    $("i").addClass("fa fa-spinner fa-spin");
+    setTimeout(function () {
+    $("i").removeClass("fa fa-spinner fa-spin");
+    $("i").addClass("fas fa-plus");
+    }, 500);
   });
   $(".row").each(function () {
     var ourTime = parseInt($(this).attr("id").split("-")[1]);
-    var currentTime = moment().hours()-12;
+    var currentTime = moment().hours()-8;
 
-    console.group(ourTime, currentTime);
     if (ourTime < currentTime) {
       $(this).children(".event").addClass("past");
     } else if (ourTime === currentTime) {
@@ -39,8 +43,4 @@ $(document).ready(function () {
     localStorage.clear();
     location.reload();
   });
-  // const midnight = moment().hours()
-  // if (midnight === 24) {
-  //     localStorage.clear()
-  // }
 });
