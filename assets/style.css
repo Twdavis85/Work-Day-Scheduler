@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 1;
   background-color: lightgray;
 }
@@ -88,4 +88,3 @@ textarea {
   color: green;
   transition: all 0.3s ease-in-out;
 }
-

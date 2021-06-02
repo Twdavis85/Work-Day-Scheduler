@@ -6,8 +6,8 @@ $(document).ready(function () {
     $("i").removeClass("fas fa-plus");
     $("i").addClass("fa fa-spinner fa-spin");
     setTimeout(function () {
-    $("i").removeClass("fa fa-spinner fa-spin");
-    $("i").addClass("fas fa-plus");
+      $("i").removeClass("fa fa-spinner fa-spin");
+      $("i").addClass("fas fa-plus");
     }, 500);
   });
   $(".row").each(function () {
